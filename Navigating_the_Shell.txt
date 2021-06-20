@@ -1,0 +1,72 @@
+echo - repeats command line back to you
+!! - repeats the command line back to you twice, putting the command in quotes will stop that
+$ - a shell variable
+echo $COLUMNS x $LINES - tells you how big your terminal is
+ls - lists the contents of a directory
+cd - change directory
+cd .. - go back a directory
+; - let's you write two commands in one line, it runs them in order
+pwd = print working directory
+ls -l - prints the long version of your directory
+ls -l Documents/*.pdf - will return all files that are .pdf
+mkdir - creates directories
+mv - moves directories around
+curl - used to transfer data (stands for "see url", as in, see a web page)
+$ curl -o google.html -L 'http://google.com'
+$ curl -o dictionary.txt -L 'http://tinyurl.com/zeyq9vc' #saves to a file called "dictionary.txt"
+
+$ cat - reads files, short for catenate or concatenate
+$ less - will show you one screen full of the file at a time.
+Press q to get out of less
+
+$ rm - removes the files, permanently!! no warning
+$ rm SillyFile.txt
+
+$ grep shell dictionary.txt - will output all the words in a file with the word "shell"
+
+$ grep shell dictionary.txt | less - will output the text containing shell one page at a time within the less console
+
+$ curl -L 'http://tinyurl.com/zeyq9vc' | grep fish | wc -l 
+# The command above will output to the terminal the number of lines in the website which contain fish
+
+$ curl -L 'http://tinyurl.com/zeyq9vc' | grep -c fish 
+# This command also uotputs the count to terminal
+
+$ grep ibo dictionary.txt | wc
+# This command will give you the word count of lines containing ibo
+
+# grep patterns are also called regular expressions, or regexps or regexes
+
+^[Rr]eg.*[Ee]x.* means any string that starts with reg and has ex in it, but upper and lower case R and E are both okay.
+
+Two different kinds of variables in the shell
+
+shell variables - echo $LINES x $COLUMNS
+
+environment variables - shared from programs you run within the shell
+$ echo $PATH tells you where in your system your program files are
+
+$ PATH=$PATH:/new/dir/here
+# adds a new directory to the end of your path
+
+$ echo $PWD - environment variable because it's not just local to the shell
+
+# one way to deal with environment inconsistencies, if statements
+
+if [-f ~/.bashrc ] ; then
+    source ~/.bashrc
+
+
+
+$rm -i ValueableFile.txt - will prompt you before removing the file
+$ rmdir - remove directory
+$ exit - quits the application
+
+https://superuser.com/questions/602872/how-do-i-modify-my-git-bash-profile-in-windows
+
+http://bashrcgenerator.com/
+
+$ alias ll='ls -la'
+# alias gives shorter names to commands
+
+$ alias - the alias command with no arguments will list all the alias's you have
